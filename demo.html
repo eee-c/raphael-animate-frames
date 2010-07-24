@@ -12,7 +12,7 @@ h1 { font-family: 'Cantarell', arial, serif; }
 <body>
 <h1>SVG Frames Animation</h1>
 <div id="container"></div>
-<p>This is a demo of the <a href="http://github.com/eee-c/raphael-animate-frames">raphael-animate-frames</a>plugin for Raphael.js.
+<p>This is a demo of the <a href="http://github.com/eee-c/raphael-animate-frames">raphael-animate-frames</a> plugin for Raphael.js.
 </body>
 <script type="application/javascript">
 var standing = [
@@ -59,12 +59,12 @@ var walking = [
     d: "m 27.970621,11.503807 c 0.09878,4.794487 -3.625825,9.254299 -8.244694,9.888541 C 15.282994,22.185422 10.583894,19.322284 9.1090954,14.943452 7.4780985,10.605964 9.2934491,5.2861677 13.201573,2.948285 c 3.892493,-2.53638571 9.452051,-1.6375587 12.397375,2.008774 1.523084,1.7954543 2.381825,4.1636216 2.371673,6.546748 z" }
 ];
 
-// A 500x500 raphael paper
-var paper = Raphael("container", 500, 500);
+// A 300x300 raphael paper
+var paper = Raphael("container", 300, 300);
 
 // Build animation
 paper
   .svg_frames(standing, walking)
-  .translate(100, 100, 5*1000);
+  .translate(250, 250, 5*1000);
 </script>
 </html>
