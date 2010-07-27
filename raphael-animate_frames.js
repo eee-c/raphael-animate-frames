@@ -4,6 +4,7 @@ Raphael.fn.svg_frames = function() {
   var frames = {
     list: [],
     interval: 333,
+    paper: paper,
 
     add: function() {
       for (var i=0; i<arguments.length; i++) {
@@ -94,10 +95,25 @@ Raphael.fn.svg_frames = function() {
          // animate along that path
          obj.animateAlong(p, seconds);
       };
+    },
+
+    getBBox: function() {
+      return this.list[0][this.list[0].length-1].getBBox();
+    },
+
+    attr: function() {
+      // delegate to last object in first frame
+      var obj = this.list[0][this.list[0].length-1];
+      return obj.attr.apply(obj, arguments);
+    },
+
+    onAnimation: function(fn) {
+      this.list[0][0].onAnimation(fn);
     }
 
   };
 
+  // TODO: accept an array argurment
   frames.add.apply(frames, arguments);
   frames.show_frame(frames.list[0]);
 
